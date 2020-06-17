@@ -25,6 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 #Hirb provides a mini view framework for console applications 
 gem 'hirb'
 
+gem 'semantic-ui-sass'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

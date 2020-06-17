@@ -1,0 +1,77 @@
+<h4 class="ui icon center aligned header">
+  <i class="comments outline icon"></i>
+  What's talking?
+</h4>
+
+<div class="ui two column grid ">    
+  <div class="twelve wide column">
+    <div class="ui fluid raised card chatbox">   
+      <div class="content">      
+        <div class="ui feed">
+          <% @messages.each do |message| %>
+            <b> <%= message.user.name %> </b> : <%= message.body %>
+            </br>
+          <% end %>
+        </div> 
+      </div>   
+      <div class="extra content">
+        <form class="ui reply form">
+          <div class="field">                      
+            <div class="ui fluid icon input">
+              <input type="text" placeholder="What's on your mind?">
+              <i class="bordered inverted orange edit icon"></i> 
+            </div>
+          </div>
+        </form>      
+      </div>
+    </div>
+  </div>
+    
+  <div class="ui four wide column">      
+    <div class="ui fluid raised card chatbox">
+      <div class="content">      
+        <div class="ui inverted vertical menu">
+          <a class="active item"> Home </a>
+          <a class="item"> Friends </a>
+          <a class="item"> Message </a>
+        </div>      
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+
+
+<%#
+
+<div class="event">
+<div class="content">
+  <div class="summary">
+    <a>Mithun </a> added <a>Julian</a> as a friend
+  </div>
+</div>
+</div>          
+<div class="event">
+<div class="content">
+  <div class="summary">
+    <a>Anthony</a> removed <a>Mushtaq </a> from the group
+  </div>
+</div>
+</div>
+<div class="event">
+<div class="content">
+  <div class="summary">
+    <a>Kim Jong Il</a> added <a>Kim Il Sung</a> as a friend
+  </div>
+</div>
+</div>
+<div class="event">
+<div class="content">
+  <div class="summary">
+    <a>David Tua</a> signed up for the  site.
+  </div>
+</div>
+</div> 
+
+%>
