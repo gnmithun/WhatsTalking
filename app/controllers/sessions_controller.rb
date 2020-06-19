@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name:params[:session][:name])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      flash[:success] = "Logged in successfully"
+      flash[:success] = "Welcome #{user.name} !!!"
       redirect_to root_path
     else
       flash.now[:error] = "Log in failed: Check your credentials"
@@ -20,15 +20,18 @@ class SessionsController < ApplicationController
 
 
   def destroy
+
+    user = User.find(session[:user_id]) if session[:user_id]
     session[:user_id] = nil
-    flash[:success] = "Logged out successfully"
+    flash[:success] = "Bye #{user.name}. See you soon!!!"
     redirect_to login_path
   end
 
   private
   def logged_in_redirect
     if logged_in?
-      flash[:error] = "You are already logged in"
+      user = User.find(session[:user_id]) if session[:user_id]
+      flash[:error] = "You are already logged in #{user.name}"
       redirect_to root_path
     end
   end
