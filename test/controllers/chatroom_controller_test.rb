@@ -18,7 +18,7 @@ class ChatroomControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
     
     follow_redirect!
-    assert_match "Logged in successfully", response.body    
+    assert_match "Welcome Mithun !!!", response.body    
   end
 
   def teardown
