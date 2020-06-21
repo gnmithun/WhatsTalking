@@ -11,15 +11,15 @@
           <%= render @messages %>    
         </div> 
       </div>   
-      <div class="extra content">
-        <form class="ui reply form">
+      <div class="extra content">        
+        <%= form_for(@message, html: { class: "ui reply form", role: "form" }, url: create_path) do |form| %>
           <div class="field">                      
             <div class="ui fluid icon input">
-              <input type="text" placeholder="What's on your mind?">
-              <i class="bordered inverted orange edit icon"></i> 
+              <%= form.text_field :body %>
+              <%= form.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>              
             </div>
-          </div>
-        </form>      
+          </div>        
+        <% end %>
       </div>
     </div>
   </div>
