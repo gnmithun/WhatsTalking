@@ -3,11 +3,16 @@ class MessagesController < ApplicationController
 
   def create
     message = current_user.messages.build(whitelisted_messages)
-    redirect_to root_path if message.save
+    ActionCable.server.broadcast "ChatroomChannel", mod_message: message_render(message) if message.save
   end
 
   private
   def whitelisted_messages
     params.require(:message).permit(:body)
   end
+
+  def message_render(message)
+    render(partial: 'message', locals: {message: message} )
+  end
+
 end
