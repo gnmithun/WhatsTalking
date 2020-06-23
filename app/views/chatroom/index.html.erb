@@ -3,69 +3,23 @@
   What's talking?
 </h4>
 
-<div class="ui two column grid ">    
-  <div class="twelve wide column">
+<div class="ui column grid ">    
+
     <div class="ui fluid raised card chatbox">   
       <div class="content" id="messages">      
         <div class="ui feed" id="chatroom-feed">
           <%= render @messages %>    
         </div> 
       </div>   
-      <div class="extra content">        
-        <%= form_for(@message, html: { class: "ui reply form", role: "form" }, url: create_path, remote: true) do |form| %>
-          <div class="field">                      
-              <%= form.text_field :body%>                          
-          </div>        
+      <div class="extra content">    
+        <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: create_path, remote: true) do |f| %>
+          <div class="field">
+              <%= f.text_field :body %>
+          </div>
+          </div>
         <% end %>
       </div>
     </div>
-  </div>
+
     
-  <div class="ui four wide column">      
-    <div class="ui fluid raised card chatbox">
-      <div class="content">      
-        <div class="ui inverted vertical menu">
-          <a class="active item"> Home </a>
-          <a class="item"> Friends </a>
-          <a class="item"> Message </a>
-        </div>      
-      </div>
-    </div>
-  </div>  
 </div>
-
-
-
-
-<%#
-
-<div class="event">
-<div class="content">
-  <div class="summary">
-    <a>Mithun </a> added <a>Julian</a> as a friend
-  </div>
-</div>
-</div>          
-<div class="event">
-<div class="content">
-  <div class="summary">
-    <a>Anthony</a> removed <a>Mushtaq </a> from the group
-  </div>
-</div>
-</div>
-<div class="event">
-<div class="content">
-  <div class="summary">
-    <a>Kim Jong Il</a> added <a>Kim Il Sung</a> as a friend
-  </div>
-</div>
-</div>
-<div class="event">
-<div class="content">
-  <div class="summary">
-    <a>David Tua</a> signed up for the  site.
-  </div>
-</div>
-</div> 
-
-%>
