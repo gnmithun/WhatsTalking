@@ -20,7 +20,7 @@ require("semantic-ui-sass")
 submit_message = function() {
   $('#message_body').on('keydown', function(e){
     if (e.keycode == 13){
-      $('button').click()
+
     }
   })
 }
@@ -40,7 +40,7 @@ $(document).on('turbolinks:load', function(){
       .transition('fade')
     ;
   });
-  submit_message()
+  
   scroll_bottom()
 })
 
