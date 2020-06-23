@@ -110,6 +110,6 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   config.web_socket_server_url = "wss://whatstalking.herokuapp.com//cable"
-  config.action_cable.allowed_request_origins = ['https://whatstalking.herokuapp.com/]
+  config.action_cable.allowed_request_origins = ['https://whatstalking.herokuapp.com/']
 
 end
