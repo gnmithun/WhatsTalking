@@ -6,7 +6,7 @@
 
   
 
-<div class="ui placeholder segment">
+<div class="ui placeholder raised segment">
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
 
@@ -27,13 +27,13 @@
           </div>
         </div>
           <%= f.button "Login", class: "ui orange submit button customLogin" %>
-<% end %>
+      <% end %>
 
     </div>
     <div class="middle aligned column">
       <div class="ui medium orange button">
         <i class="black signup icon "></i>
-        Sign Up
+        <%= link_to "Sign Up", signup_path %>              
       </div>
     </div>
   </div>

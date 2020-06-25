@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post 'create', to: 'messages#create'
 
   get 'signup', to: 'users#new'
-  resource :user, only: [:create]
+  resource :users, only: [:create]
   
   mount ActionCable.server, at: '/cable'
 end
