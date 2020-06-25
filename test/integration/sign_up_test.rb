@@ -12,7 +12,7 @@ class SignUpTest < ActionDispatch::IntegrationTest
     get signup_path
     assert :success
 
-    post users_path, params: { session: { name: "Mithun", password: "password" } }
+    post users_path, params: { user: { name: "Mithun", password: "password" } }
 
     assert_equal 1, User.all.count
     user = User.find_by(name:"Mithun")

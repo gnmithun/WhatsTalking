@@ -5,17 +5,22 @@
 </h3>
 
 <div class="ui placeholder raised segment">
-  <form class="ui form">
-    <div class="twelve wide field username">
-      <label>Username</label>
-      <input type="text" name="first-name" placeholder="Username">
+  
+  <%= form_with(model:@user, class:"ui form", local: true) do |form| %>
+
+
+    <div class="required field">
+      <%= form.label :Username %>         
+      <%= form.text_field :name%>             
     </div>
 
-    <div class="twelve wide field password">
-      <label>Password</label>
-      <input type="text" name="last-name" placeholder="password">
+    <div class="required field">
+      <%= form.label :Password %>  
+      <%= form.password_field :password %>           
     </div>
 
-    <button class="ui orange medium button" type="submit">Sign up</button>
-  </form>      
+    <%= form.submit "Sign up", class:"ui orange medium button" %>
+    
+  <% end %>
+
 </div>

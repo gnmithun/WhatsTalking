@@ -5,12 +5,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(whitelisted_user_params)
-    @user.save
+    if @user.save      
+      flash[:success] = "Welcome #{@user.name}! "      
+      session[:user_id] = @user.id            
+      redirect_to root_path
+    else
+      flash.now[:error] = "Sorry #{@user.name}! Sign up failed, because #{@user.errors.messages}"
+      render 'new'
+    end
   end
 
   private
   def whitelisted_user_params
-    params.require(:session).permit(:name,:password)
+    params.require(:user).permit(:name,:password)
   end
 
 end
