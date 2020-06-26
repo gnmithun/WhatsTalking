@@ -112,4 +112,7 @@ Rails.application.configure do
   config.web_socket_server_url = "wss://whatstalking.herokuapp.com//cable"
   config.action_cable.allowed_request_origins = ['https://whatstalking.herokuapp.com/']
 
+  # More details here 
+  # https://github.com/gnmithun/WhatsTalking/network/alert/Gemfile.lock/actionpack/open
+  config.middleware.delete ActionDispatch::ActionableExceptions
 end
